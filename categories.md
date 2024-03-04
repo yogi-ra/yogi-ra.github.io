@@ -18,3 +18,20 @@ title: "Categories"
   </div>
 {% endfor %}
 </div>
+<script>
+// Ambil nama kategori dari hash di URL
+var categoryName = window.location.hash.substring(1);
+// Jika hash tidak ditemukan, tampilkan semua kategori
+if (!categoryName) {
+  categoryName = 'all';
+}
+// Sembunyikan semua kategori kecuali yang dicari
+var archiveGroups = document.getElementsByClassName('archive-group');
+for (var i = 0; i < archiveGroups.length; i++) {
+  var group = archiveGroups[i];
+  var header = group.querySelector('.category-head');
+  if (header.textContent.toLowerCase() !== categoryName.toLowerCase() && categoryName !== 'all') {
+    group.style.display = 'none';
+  }
+}
+</script>

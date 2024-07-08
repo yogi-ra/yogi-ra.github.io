@@ -18,7 +18,7 @@ categories: python mail
 </div>
 
 ![logo](/assets/img/Screenshot 2023-05-15 192521.png)
-Pada artikel ini, Saya akan membahas bagaimana Team MiniPBL kami membuat Mailing Client Project dengan Python.
+Pada blog ini, Saya akan membahas bagaimana Team MiniPBL kami membuat Mailing Client Project dengan Python.
 
 Saat ini, dengan semakin pesatnya perkembangan teknologi, komunikasi melalui email telah menjadi salah satu cara paling umum untuk berhubungan secara elektronik. Namun, dengan meningkatnya ancaman keamanan siber, penting bagi kita untuk menjaga privasi dan kerahasiaan pesan-pesan yang kita kirimkan melalui email. Untuk itu, kami membuat Project Mailing Client untuk memenuhi tugas Mini Project Based Learning (Mini PBL), sebuah aplikasi web sederhana yang dikembangkan dengan fokus pada keamanan siber.
 

@@ -17,7 +17,7 @@ categories: ctf
   {% endfor %}
 </div>
 
-Pada artikel ini, saya akan membagikan cara untuk bypass filtered input SSTI Jinja2 dengan requirements:
+Pada blog ini, saya akan membagikan cara untuk bypass filtered input SSTI Jinja2 dengan requirements:
 
 - Memungkinkan SSTI
 - Double curly brackets atau dobel kurung kurawal \{\{ di filter

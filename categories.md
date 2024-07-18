@@ -10,15 +10,19 @@ title: "Categories"
     <div id="#{{ category_name | slugize }}"></div>
     <p></p>
 
-    <h3 class="category-head">{{ category_name }}</h3>
-    <a name="{{ category_name | slugize }}"></a>
+    <h3 class="category-head"><a href="#{{ category_name }}" style="color: #212228">{{ category_name }}</a></h3>
     {% for post in site.categories[category_name] %}
       <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
+
   </div>
 {% endfor %}
 </div>
 <script>
+window.addEventListener('hashchange', function() {
+  var categoryName = window.location.hash.substring(1);
+  window.location.reload();
+});
 // Ambil nama kategori dari hash di URL
 var categoryName = window.location.hash.substring(1);
 // Jika hash tidak ditemukan, tampilkan semua kategori

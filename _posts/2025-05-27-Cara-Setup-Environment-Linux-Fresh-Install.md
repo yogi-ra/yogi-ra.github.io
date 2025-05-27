@@ -118,6 +118,39 @@ Setelah lazy.nvim terinstall, ini apa saja yang bisa kita lakukan, pertama buka 
 
 Penggunaannya sangat straight-forward yah, kita bisa menjalankan `g?` untuk help, dan disana bakal terdapat list untuk instalasi dan sebagainya.. lalu jalankan `g?` kembali untuk balik dari mode help, lalu `1` `2` `3` `4` `5` untuk berpindah antara kategori plugin mana yang ingin di-<em>install</em>
 
+Selain mason juga ada yang useful nih, bisa dicoba yaitu nvim-tree yang udah ter<em>install</em> langsung sebagai bawaan dari Lazy.NVim, untuk settingan yang saya gunakan yaitu dengan menambahkan toggle pada `<leader>n` karena leader saya menggunakan space, jadi `<space>n` untuk membuka tutup file tree.
+
+Berikut settingan pada `~/.config/nvim/lua/config/nvim-tree.lua`
+
+```lua
+local nvim_tree = require("nvim-tree").setup({
+  actions = {
+    open_file = {
+      quit_on_open = false,
+      window_picker = {
+        enable = true,
+        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        exclude = {
+          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          buftype = { "nofile", "terminal", "help" },
+        },
+      },
+    },
+  },
+})
+
+vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+```
+Jangan lupa juga tambahkan config pada `~/.config/nvim/init.lua` yaitu `require("config.nvim-tree")`. Berikut isi dari init.lua yang saya gunakan
+```
+➜  ~/.config/nvim
+» cat init.lua
+require("config.lazy")
+require("core.options")
+require("core.keymaps")
+require("config.nvim-tree")
+```
+
 Lalu, berikut merupakan list command yang sering saya gunakan dan sangat berguna untuk menggunakan nvim sebagai workspace
 
 ```

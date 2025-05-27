@@ -13,7 +13,7 @@ categories: ctf
   <strong>Categories: </strong>
   {% for category in categories %}
   <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
-  {% unless forloop.last %}&nbsp;{% endunless %}
+  {% unless forloop.last %}, {% endunless %}
   {% endfor %}
 </div>
 

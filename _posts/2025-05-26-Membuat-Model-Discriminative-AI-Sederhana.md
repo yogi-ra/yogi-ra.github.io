@@ -13,7 +13,7 @@ categories: AI
   <strong>Categories: </strong>
   {% for category in categories %}
   <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
-  {% unless forloop.last %}&nbsp;{% endunless %}
+  {% unless forloop.last %}, {% endunless %}
   {% endfor %}
 </div>
 
@@ -146,7 +146,7 @@ Tidak mengejutkan rata-rata error prediksinya sangat jauh, karena dataset yang d
 # Penutup
 {: #penutup}
 
-Baiklah sekian saja materi yang saya pelajari dari discriminative AI untuk memprediksi harga properti di suatu lokasi. Tolong hubungi jika saya jika ada masukan, insight baru sangat diterima!
+Baiklah sekian saja materi yang saya pelajari dari discriminative AI untuk memprediksi harga properti di suatu lokasi. Tolong hubungi saya jika ada masukan, insight baru sangat diterima!
 
 Terima kasih sudah membaca!
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Cara Setup Environmnent Linux Fresh Install., ZSH, NVim, dan tool useful lainnya"
-categories: blog misc
+categories: blog tools
 ---
 
 <div class="post-categories">
@@ -96,7 +96,22 @@ enable-pyenv() {
 enable-pyenv
 ```
 
-Selanjutnya aktifkan secara pyenv dengan cara relog atau `source ~/.zshrc`
+Selanjutnya aktifkan secara pyenv dengan cara relog atau `source ~/.zshrc`dan pyenv siap untuk digunakan.
+
+Meskipun pyenv bisa digunakan untuk memakai versi yang berbeda, virtualenvーpastikan untuk menginstall depedensi yang membutuhkan sistem pada python versi sistem
+{: style="color: red;"} 
+
+Untuk cara mengganti versi python pada pyenv, pastikan terlebih dahulu pyenv sudah digunakan pada PATH dengan cara `which python`, jika outputnya adalah `~/.pyenv/shims/python`ーmaka sudah benar.
+
+Untuk menambah versi pada python, cari tahu dulu versi mana yang akan di-<em>install</em> dengan cara `pyenv install --list` jika sudah tau versi mana yang ingin di-<em>install</em> maka lakukan instalasi dengan `pyenv install <versi>` atau bisa juga menggunakan versi yang sama tetapi pada virtualenv dengan perintah `pyenv virtualenv <nama>`
+
+Untuk cara mengganti versi, ada 2 cara
+- local: direktori yang sedang digunakan akan terdapat file `.python-version` yang akan dijadikan referensi oleh pyenv untuk menentukan versi spesifik direktori
+- global: versi python yang digunakan secara keseluruhan pada system
+
+Cara menggantinya adalah dengan perintah `pyenv global <versi>`, penggunaan ini juga berlaku pada virtualenv, tapi alih-alih menggunakan global, kita bisa menggunakan local untuk menerapkan virtualenv hanya pada spesifik direktori.
+
+Jika ingin menggunakan python versi bawaan sistem, gunakan perintah `pyenv global system`
 
 # NVim (NeoVim)
 {: #nvim}

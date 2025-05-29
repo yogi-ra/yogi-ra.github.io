@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Membuat 64 bit Shellcode - Shellcode Injection | Soal KMIPNVI-bad-shell"
-categories: ctf assembly
+categories: ctf pwn assembly
 ---
 
 <div class="post-categories">
